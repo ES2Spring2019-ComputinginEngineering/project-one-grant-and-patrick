@@ -11,7 +11,10 @@ def time():
 
 def position(t):
     mangle = (math.pi/12)
-    pos = mangle * math.sin(math.sqrt((9.8)/(.1))*t-(mathj.pi/2)
+    sr = (9.8)/(.1)
+    shift = (9.8)/(.1)
+    sin = math.sqrt(sr)*t-shift
+    pos = mangle * math.sin(sin)
 
 def velocity(t):
 
