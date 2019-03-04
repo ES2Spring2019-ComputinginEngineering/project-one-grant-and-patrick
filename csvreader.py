@@ -5,7 +5,7 @@ import csv
 
 timelist = []
 acclist = []
-with open('FINALdata.csv', newline='') as csvfile:
+with open('/Users/grant/Documents/GitHub/project-one-grant-and-patrick/data/data1L=0.226m.csv', newline='') as csvfile:
     read = csv.reader(csvfile)
     for row in read:
         timelist.append(row[0])
