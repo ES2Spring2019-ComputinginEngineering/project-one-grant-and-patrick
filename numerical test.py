@@ -33,9 +33,6 @@ def acceleration(t):
     accl = (velocity(t) - velocity(t - timestep))/timestep
     return accl
 
-
-
-
 def movement():
     time = 0
     time_end = 1
@@ -55,10 +52,12 @@ def plotposition():
     while a*timestep < timefinal:
         poslist.append(position(timeinitial+(a*timestep)))
         a += 1
+    plt.subplot(3,1,2)
     plt.plot(timelist, poslist)
-    plt.ylabel('position')
+    plt.ylabel('Position(m)')
+    plt.xlabel('Time(s)')
+    plt.grid()
     plt.show()
-
 
 def plotvelocity():
     # Generate time list (x axis):
@@ -72,9 +71,32 @@ def plotvelocity():
     while a*timestep < timefinal:
         vellist.append(velocity(timeinitial+(a*timestep)))
         a += 1
+    plt.subplot(3,1,2)
     plt.plot(timelist, vellist)
-    plt.ylabel('velocity')
+    plt.ylabel('Velocity (m/s)')
+    plt.xlabel('Time(s)')
+    plt.grid()
+    plt.show()
+
+def plotacceleration():
+    # Generate time list (x axis):
+    a = 0
+    timelist = []
+    while a*timestep < timefinal:
+        timelist.append(timeinitial+(a*timestep))
+        a += 1
+    accllist = []
+    a = 0
+    while a*timestep < timefinal:
+        accllist.append(acceleration(timeinitial+(a*timestep)))
+        a += 1
+    plt.subplot(3,1,2)
+    plt.plot(timelist, accllist)
+    plt.ylabel('Acceleration (m/s)')
+    plt.xlabel('Time(s)')
+    plt.grid()
     plt.show()
 
 plotposition()
 plotvelocity()
+plotacceleration()
