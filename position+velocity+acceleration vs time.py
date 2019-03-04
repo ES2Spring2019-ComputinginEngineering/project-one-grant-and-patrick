@@ -1,16 +1,27 @@
+#Simulation of a pendulum, graphs position, velocity, and acceleration vs. time using meters and seconds
+# Created by: Grant Smith and Patrick Wright
+
+
+
+
 import math
 import numpy as np 
 import matplotlib.pyplot as plt 
 
+#global variables
 
-timeinitial = 0 #IMPORTANT
+timeinitial = 0 
 timefinal = 5
-timestep = 0.001 # IMPORTANT
-length = 1 #IMPORTANT, length in meters
+timestep = 0.001 
+length = 1 # length in meters
 mangle = (math.pi/12) # max (starting) angle in rads
-a = 0 #don't touch this
+a = 0 
+
 
 def print_system(time,pos,vel,accl):
+    '''Prints the position ,velopcity, and acceleration
+    not needed any more???
+    '''
     print("TIME:     ", round(time,2), ' s')
     print("POSITION: ", pos , ' degrees')
     print("VELOCITY: ", vel, ' m/s')
@@ -100,3 +111,4 @@ def plotacceleration():
 plotposition()
 plotvelocity()
 plotacceleration()
+print_system()
