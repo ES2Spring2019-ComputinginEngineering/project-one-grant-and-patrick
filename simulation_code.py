@@ -14,6 +14,7 @@ length = 1 # length in meters
 mangle = (math.pi/12) # max (starting) angle in rads
 a = 0 
 
+#defintion of functions
 
 def print_system(time,pos,vel,accl):
     '''Prints the position ,velocity, and acceleration
@@ -25,6 +26,8 @@ def print_system(time,pos,vel,accl):
 
 
 def position(t):
+    '''returns position of pendulum at given time t
+    '''
     sr = (9.8)/(length)
     shift = (math.pi)/(2)
     sin = math.sqrt(sr)*t-shift
@@ -33,14 +36,20 @@ def position(t):
     return pos
 
 def velocity(t):
+    '''returns the veloctiy of pendulum at given time t
+    '''
     vel = (position(t) - position(t-timestep))/timestep
     return vel
 
 def acceleration(t):
+    '''returns the acceleration of a pendulum at given time t
+    '''
     accl = (velocity(t) - velocity(t - timestep))/timestep
     return accl
 
 def movement():
+    '''returns steps in time starting at time = 0 and ending at time = 1 with time step of .001 seconds
+    '''
     time = 0
     time_end = 1
     while time <= time_end:
@@ -48,6 +57,8 @@ def movement():
         time += timestep # <--------how large step forward in time
 
 def plotposition():
+    '''returns plot of position vs time
+    '''
     # Generate time list (x axis):
     a = 0
     timelist = []
@@ -67,6 +78,8 @@ def plotposition():
     plt.show()
 
 def plotvelocity():
+    '''returns plot of velocity vs time
+    '''
     # Generate time list (x axis):
     a = 0
     timelist = []
@@ -86,6 +99,8 @@ def plotvelocity():
     plt.show()
 
 def plotacceleration():
+    '''returns plot of acceleration vs time
+    '''
     # Generate time list (x axis):
     a = 0
     timelist = []
@@ -103,6 +118,9 @@ def plotacceleration():
     plt.xlabel('Time(s)')
     plt.grid()
     plt.show()
+
+#Script that gives position velocity and acceleration plot along with steping throught time
+#at a time step = 0.001 s
 
 plotposition()
 plotvelocity()
