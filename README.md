@@ -8,4 +8,4 @@ another with position vs. time and a final of acceleration vs. time
 The parsing code is run with 'csvreader.py' to parse a file and clean it put the path of the file in and run the code to get 
 cleaned data
 
-To calculate the period and find the relationships between period & lengths run the file 'csvreader.py' this will automatically run with the csv file that was used for parsing
+To calculate the period and find the relationships between period & lengths run the file 'data_analysis.py' this will automatically run with the csv file that was used for parsing
