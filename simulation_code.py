@@ -59,7 +59,7 @@ def movement():
     '''returns steps in time starting at time = 0 and ending at time = 1 with time step of .001 seconds
     '''
     time = 0
-    time_end = 1
+    time_end = 5
     while time <= time_end:
         print_system(time, position(time), velocity(time), acceleration(time))
         time += timestep # <--------how large step forward in time
@@ -69,10 +69,10 @@ def movement():
 
 def write_csv_data_file():
     time = 0
-    time_end = 1
+    time_end = 10
     csvData = [[]]
     while time <= time_end:
-        csvData.append([time, acceleration(time)])
+        csvData.append([time, (acceleration(time))/0.00981])
         time += timestep
     return csvData
 row = write_csv_data_file()
