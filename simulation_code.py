@@ -72,7 +72,7 @@ def write_csv_data_file():
     time_end = 10
     csvData = [[]]
     while time <= time_end:
-        csvData.append([time, (acceleration(time))/0.00981])
+        csvData.append([time*1000, (acceleration(time))*0.00980665])
         time += timestep
     return csvData
 row = write_csv_data_file()
