@@ -1,12 +1,22 @@
+#This analysis a given file. Once run it will filter a file, find the period, and graph
+
+#Created by: Grant Smith and Patrick Wright
+
 import matplotlib.pyplot as plt
 import scipy.signal as sig
 import numpy as np
 import csv 
 import statistics
 
+#file you would like to analyze (paste path name), length of pendulum, and test number
+file = 'data/real/data1L=0.226m.csv'
+Length = '0.226m'
+testnumber = '1'
+realorsim = 'Simulated'
+
 timelist = []
 acclist = []
-with open('FINALdata.csv', newline='') as csvfile:
+with open(file, newline='') as csvfile:  
     read = csv.reader(csvfile)
     for row in read:
         timelist.append(row[0])
@@ -29,7 +39,9 @@ acc_peaks, _ = sig.find_peaks(accfilt)
 
 # Plot waveforms and their peaks
 plt.plot(timearray, accarray, 'r-', timearray[acc_peaks], accarray[acc_peaks], 'b.')
-plt.title('Original')
+plt.title(realorsim + ' Pendulum Length: ' + Length + ' (Test ' + testnumber + ')')
+plt.ylabel('Acceleration (milli-g)')
+plt.xlabel('Time (ms)')
 plt.show()
 
 # Period analysis below:
