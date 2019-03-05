@@ -12,7 +12,7 @@ import statistics
 file = 'data/test/testdata1L=0.226.csv'
 Length = '0.226m'
 testnumber = '1'
-realorsim = 'Simulated'
+realorsim = 'Real'
 
 timelist = []
 acclist = []
