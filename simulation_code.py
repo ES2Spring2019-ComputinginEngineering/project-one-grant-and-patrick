@@ -3,16 +3,23 @@
 
 import math
 import numpy as np 
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+import csv 
 
 #global variables
 
+test_number = '1'
+length = .226 # length in meters
 timeinitial = 0 
 timefinal = 5
 timestep = 0.001 
-length = 1 # length in meters
 mangle = (math.pi/12) # max (starting) angle in rads
 a = 0 
+data = 'data'
+L = 'L='
+csv.p = '.csv'
+testing = 'test'
+file_name = testing + data + test_number + L + str(length) + csv.p
 
 #defintion of functions
 
@@ -47,6 +54,7 @@ def acceleration(t):
     accl = (velocity(t) - velocity(t - timestep))/timestep
     return accl
 
+
 def movement():
     '''returns steps in time starting at time = 0 and ending at time = 1 with time step of .001 seconds
     '''
@@ -55,6 +63,26 @@ def movement():
     while time <= time_end:
         print_system(time, position(time), velocity(time), acceleration(time))
         time += timestep # <--------how large step forward in time
+
+        
+
+
+def write_csv_data_file():
+    time = 0
+    time_end = 1
+    csvData = [[]]
+    while time <= time_end:
+        csvData.append([time, acceleration(time)])
+        time += timestep
+    return csvData
+row = write_csv_data_file()
+
+def write_csv(data):
+    with open(file_name, 'a') as csvFile:
+        writer = csv.writer(csvFile)
+        writer.writerows(data)
+
+    csvFile.close()
 
 def plotposition():
     '''returns plot of position vs time
@@ -125,4 +153,5 @@ def plotacceleration():
 plotposition()
 plotvelocity()
 plotacceleration()
-print_system(movement(),position(movement()),velocity(movement()),acceleration(movement()))
+movement()
+write_csv(row)
