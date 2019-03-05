@@ -9,7 +9,7 @@ import csv
 import statistics
 
 #file you would like to analyze (paste path name), length of pendulum, and test number
-file = 'data/real/data1L=0.226m.csv'
+file = 'data/test/testdata1L=0.226.csv'
 Length = '0.226m'
 testnumber = '1'
 realorsim = 'Simulated'
