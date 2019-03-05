@@ -72,7 +72,7 @@ def write_csv_data_file():
     time_end = 10
     csvData = [[]]
     while time <= time_end:
-        csvData.append([time*1000, (acceleration(time))*0.00980665])
+        csvData.append([time*1000, (acceleration(time))]) # look here ------------11-1-1-1-1-1
         time += timestep
     return csvData
 row = write_csv_data_file()
@@ -142,7 +142,7 @@ def plotacceleration():
         a += 1
     plt.subplot(3,1,2)
     plt.plot(timelist, accllist)
-    plt.ylabel('Acceleration (m/s)')
+    plt.ylabel('Acceleration (m/s^2)')
     plt.xlabel('Time(s)')
     plt.grid()
     plt.show()
