@@ -29,7 +29,7 @@ def print_system(time,pos,vel,accl):
     '''Prints the position ,velocity, and acceleration
     '''
     print("TIME:     ", round(time,5), ' s')
-    print("POSITION: ", pos , ' degrees')
+    print("POSITION: ", pos , ' radians')
     print("VELOCITY: ", vel, ' m/s')
     print("ACCELERATION: ", accl, 'milli-g', "\n")
 
@@ -45,29 +45,45 @@ def position(t):
 
 def posx(t):
     '''returns x position of pendulum in meters at time t'''
-    posx = length*math.sin(position(t))
-    return posx
+    position_x = length*math.sin(position(t))
+    return position_x
 
 def posy(t):
     '''returns y position of pendulum in meters at time t'''
-    posy = length*(1-math.cos(position(t)))
-    return posy
+    position_y = length*(1-math.cos(position(t)))
+    return position_y
 
+def velx(t):
+    '''returns x velocity at time t'''
+    velocity_x = (posx(t) - posx(t-timestep))/timestep
+    return velocity_x
 
-
+def vely(t):
+    '''returns y velocity at time t'''
+    velocity_y = (posy(t) - posy(t-timestep))/timestep
+    return velocity_y
 
 def velocity(t):
     '''returns the veloctiy (in m/s) of pendulum at given time t
     '''
-    vel = math.sqrt((posx(t)-posx(t-timestep))**2)+(posy(t)-posy(t-timestep)**2)/timestep
+    vel = (math.sqrt(velx(t)**2 + vely(t)**2))
     return vel
+
+def accx(t):
+    '''returns x accel at time t'''
+    acceleration_x = (velx(t) - velx(t-timestep))/timestep
+    return acceleration_x
+
+def accy(t):
+    '''returns y accel at time t'''
+    acceleration_y = (vely(t) - vely(t-timestep))/timestep
+    return acceleration_y
 
 def acceleration(t):
     '''returns the acceleration (now in milli-g!) of a pendulum at given time t
     '''
-    accl = (velocity(t) - velocity(t - timestep))*(1000/9.8)/timestep
+    accl = (math.sqrt(accx(t)**2+accy(t)**2))*(1000/9.8)
     return accl
-
 
 def movement():
     '''returns steps in time starting at time = 0 and ending at time = 1 with time step of .001 seconds
