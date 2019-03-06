@@ -9,7 +9,7 @@ import csv
 #global variables
 
 test_number = '1' #which number test is being performed
-length = .226 # length in meters
+length = .15 # length in meters
 timeinitial = 0 #time starting value
 timefinal = 5  #ending time value
 timestep = 0.001  #the 'dt' or how big each time step is 
