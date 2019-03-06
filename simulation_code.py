@@ -31,29 +31,41 @@ def print_system(time,pos,vel,accl):
     print("TIME:     ", round(time,5), ' s')
     print("POSITION: ", pos , ' degrees')
     print("VELOCITY: ", vel, ' m/s')
-    print("ACCELERATION: ", accl, 'm/s^2', "\n")
+    print("ACCELERATION: ", accl, 'milli-g', "\n")
 
 
 def position(t):
-    '''returns position of pendulum at given time t
+    '''returns position of pendulum in radians at given time t
     '''
     sr = (9.8)/(length)
     shift = (math.pi)/(2)
     sin = math.sqrt(sr)*t-shift
-    rads = mangle * math.sin(sin) #position in radians
-    pos =rads*(180/math.pi) #position in degerees
+    pos = mangle * math.sin(sin) #position in radians
     return pos
 
+def posx(t):
+    '''returns x position of pendulum in meters at time t'''
+    posx = length*math.sin(position(t))
+    return posx
+
+def posy(t):
+    '''returns y position of pendulum in meters at time t'''
+    posy = length*(1-math.cos(position(t)))
+    return posy
+
+
+
+
 def velocity(t):
-    '''returns the veloctiy of pendulum at given time t
+    '''returns the veloctiy (in m/s) of pendulum at given time t
     '''
-    vel = (position(t) - position(t-timestep))/timestep
+    vel = math.sqrt((posx(t)-posx(t-timestep))**2)+(posy(t)-posy(t-timestep)**2)/timestep
     return vel
 
 def acceleration(t):
-    '''returns the acceleration of a pendulum at given time t
+    '''returns the acceleration (now in milli-g!) of a pendulum at given time t
     '''
-    accl = (velocity(t) - velocity(t - timestep))/timestep
+    accl = (velocity(t) - velocity(t - timestep))*(1000/9.8)/timestep
     return accl
 
 
@@ -98,7 +110,7 @@ def plotposition():
         a += 1
     plt.subplot(3,1,2)
     plt.plot(timelist, poslist)
-    plt.ylabel('Position(m)')
+    plt.ylabel('Position(rads)')
     plt.xlabel('Time(s)')
     plt.grid()
     plt.show()
@@ -140,7 +152,7 @@ def plotacceleration():
         a += 1
     plt.subplot(3,1,2)
     plt.plot(timelist, accllist)
-    plt.ylabel('Acceleration (m/s^2)')
+    plt.ylabel('Acceleration (milli-g)')
     plt.xlabel('Time(s)')
     plt.grid()
     plt.show()
