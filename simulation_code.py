@@ -8,13 +8,15 @@ import csv
 
 #global variables
 
-test_number = '1'
+test_number = '1' #which number test is being performed
 length = .226 # length in meters
-timeinitial = 0 
-timefinal = 5
-timestep = 0.001 
+timeinitial = 0 #time starting value
+timefinal = 5  #ending time value
+timestep = 0.001  #the 'dt' or how big each time step is 
 mangle = (math.pi/12) # max (starting) angle in rads
 a = 0 
+
+        #variables for naming simulation test csv files, don't change
 data = 'data'
 L = 'L='
 csv.p = '.csv'
@@ -64,9 +66,6 @@ def movement():
         print_system(time, position(time), velocity(time), acceleration(time))
         time += timestep # <--------how large step forward in time
 
-        
-
-
 def write_csv_data_file():
     time = 0
     time_end = 10
@@ -75,7 +74,6 @@ def write_csv_data_file():
         csvData.append([time*1000, (acceleration(time))]) # look here ------------11-1-1-1-1-1
         time += timestep
     return csvData
-
 
 def write_csv(data):
     with open(file_name, 'a') as csvFile:
