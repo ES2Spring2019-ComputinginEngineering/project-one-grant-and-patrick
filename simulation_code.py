@@ -75,7 +75,7 @@ def write_csv_data_file():
         csvData.append([time*1000, (acceleration(time))]) # look here ------------11-1-1-1-1-1
         time += timestep
     return csvData
-row = write_csv_data_file()
+
 
 def write_csv(data):
     with open(file_name, 'a') as csvFile:
@@ -150,6 +150,7 @@ def plotacceleration():
 #Script that gives position velocity and acceleration plot along with steping throught time
 #at a time step = 0.001 s
 
+row = write_csv_data_file()
 plotposition()
 plotvelocity()
 plotacceleration()
