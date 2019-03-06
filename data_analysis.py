@@ -1,6 +1,14 @@
-#This analysis a given file. Once run it will filter a file, find the period, and graph
+#Data Analysis
 
 #Created by: Grant Smith and Patrick Wright
+
+#This will calculate the period after parsing the data and filtering it.
+#Variables that should be updated depedning on the test are:
+#'file' this is the path of the file that should be run in the analysis program
+#'Length' this is the length of the pendulum used and is only used in nameing the graph
+#'testnumber' this is the number of the test used in naming the graph
+#'realorsim' this is if the test is real world data or simulation data and is used in naming the graphs
+
 
 import matplotlib.pyplot as plt
 import scipy.signal as sig
@@ -8,12 +16,14 @@ import numpy as np
 import csv 
 import statistics
 
-#file you would like to analyze (paste path name), length of pendulum, and test number
+#global variables
 
 file = '/Users/grant/Documents/GitHub/project-one-grant-and-patrick/data/real/data1L=0.226m.csv' #path of file
 Length = '0.226m'  #length of pendulum arm
 testnumber = '1'   #number of test being performed
 realorsim = 'Real' #if the tested file is simulation or real world data
+
+#main script
 
 timelist = []
 acclist = []
