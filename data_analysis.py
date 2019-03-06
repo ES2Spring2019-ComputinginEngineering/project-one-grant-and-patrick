@@ -10,7 +10,7 @@ import statistics
 
 #file you would like to analyze (paste path name), length of pendulum, and test number
 
-file = '/Users/grant/Documents/GitHub/project-one-grant-and-patrick/data/real/data8L=0.226m.csv' #path of file
+file = '/Users/grant/Documents/GitHub/project-one-grant-and-patrick/data/real/data1L=0.226m.csv' #path of file
 Length = '0.226m'  #length of pendulum arm
 testnumber = '1'   #number of test being performed
 realorsim = 'Real' #if the tested file is simulation or real world data
