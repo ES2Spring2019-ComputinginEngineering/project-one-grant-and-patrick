@@ -1,5 +1,16 @@
-#Simulation of a pendulum, graphs position, velocity, and acceleration vs. time using meters and seconds
+#Pendulum Simulation
+# Simulation of a pendulum, graphs position, velocity, and acceleration vs. time using meters and seconds
 # Created by: Grant Smith and Patrick Wright
+
+#his will produce three graphs one with velocity vs. time another with position vs. time and a final of acceleration vs. time
+#It will print the results at given the given time step and display time, velocity, acceleration, and position.
+#A .csv file will be output to the current directory with time in milliseconds and acceleration in milli-gs
+#Variables that should be updated depedning on the test are:
+#'test_number' this will put the number of the test in the name of the csv file
+#'length' this is the length of the pendulum arm
+#'timeinitial' this is if you want the simulation to start at another time than 0
+#'timestep' this is the size of time step for the simulation
+#'mangle' this is the maximum angle of the pendulum (the starting angle)
 
 import math
 import numpy as np 
@@ -95,6 +106,7 @@ def movement():
         time += timestep # <--------how large step forward in time
 
 def write_csv_data_file():
+    '''writes simulated data to a list to prepare for .csv'''
     time = 0
     time_end = 10
     csvData = [[]]
@@ -104,6 +116,7 @@ def write_csv_data_file():
     return csvData
 
 def write_csv(data):
+    '''writes data from list to .csv'''
     with open(file_name, 'a') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerows(data)
@@ -176,7 +189,8 @@ def plotacceleration():
 #Script that gives position velocity and acceleration plot along with steping throught time
 #at a time step = 0.001 s
 
-row = write_csv_data_file()
+row = write_csv_data_file() #data that gets written to csv file
+
 plotposition()
 plotvelocity()
 plotacceleration()
