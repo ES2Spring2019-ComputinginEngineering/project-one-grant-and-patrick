@@ -1,5 +1,9 @@
-#Logs accelerometer values of the microbit in the x, y, and z axies 
+#Data Logging -- MicroBit
+# Logs accelerometer values of the microbit in the x, y, and z axies 
 #Created by: Grant Smith and Patrick Wright
+
+#Press the A button to start data collection then press the A button once more to end the data collection.
+#This will return a file named 'csvfile.txt' into your microbit and then drag and drop from microbit into your computer.
 
 import microbit
 import math
@@ -10,7 +14,6 @@ toggle = 0
 collectaccel = microbit.Image('00000:00000:09990:00000:00000')
 
 #script that collects data
-#press a to start data collection and press a again to end data collection
 
 while toggle == 0:
     if microbit.button_a.is_pressed() == True:
