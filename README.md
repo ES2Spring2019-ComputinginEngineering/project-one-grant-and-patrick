@@ -16,8 +16,8 @@ It will print the results at given the given time step and display time, velocit
 A .csv file will be output to the current directory with time in milliseconds and acceleration in milli-gs.
 Variables that should be updated depedning on the test are--
  'test_number' this will put the number of the test in the name of the csv file.
-; 'length' this is the length of the pendulum arm.
-; 'timeinitial' this is if you want the simulation to start at another time than 0.
+\n 'length' this is the length of the pendulum arm.
+\n 'timeinitial' this is if you want the simulation to start at another time than 0.
 ; 'timestep' this is the size of time step for the simulation.
 ; 'mangle' this is the maximum angle of the pendulum (the starting angle).
 
