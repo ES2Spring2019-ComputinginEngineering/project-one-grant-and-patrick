@@ -49,9 +49,8 @@ def position(t):
     '''returns position of pendulum in radians at given time t
     '''
     sr = (9.8)/(length)
-    shift = (math.pi)/(2)
-    sin = math.sqrt(sr)*t-shift
-    pos = mangle * math.sin(sin) #position in radians
+    cos = math.sqrt(sr)*t
+    pos = mangle * math.cos(cos) #position in radians
     return pos
 
 def posx(t):

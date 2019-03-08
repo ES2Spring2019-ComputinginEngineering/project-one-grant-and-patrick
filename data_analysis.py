@@ -18,10 +18,10 @@ import statistics
 
 #global variables
 
-file = '/Users/grant/Documents/GitHub/project-one-grant-and-patrick/data/real/data1L=0.226m.csv' #path of file
-Length = '0.226m'  #length of pendulum arm
-testnumber = '1'   #number of test being performed
-realorsim = 'Real' #if the tested file is simulation or real world data
+file = '/Users/User/Documents/S2019/ES 2/Github/project-one-grant-and-patrick/data/simulation/testdata6L=0.212.csv' #path of file
+Length = '0.212m'  #length of pendulum arm
+testnumber = '6'   #number of test being performed
+realorsim = 'Simulation' #if the tested file is simulation or real world data
 
 #main script
 
@@ -32,7 +32,7 @@ with open(file, newline='') as csvfile:
     for row in read:
         timelist.append(row[0])
         acclist.append(row[1])
-    timelist[0] = 0    
+    timelist[0] = 0
 for a in range(0,len(timelist)):
     timelist[a] = float(timelist[a])
 for a in range(0, len(acclist)):
@@ -56,7 +56,7 @@ plt.xlabel('Time (ms)')
 plt.show()
 
 # Period analysis below:
-timepeaklist = (timearray[acc_peaks].tolist())[4:11]
+timepeaklist = (timearray[acc_peaks].tolist())
 timepeakdifflist = []
 for num in range(0,len(timepeaklist)-1):
     timepeakdifflist.append(timepeaklist[num+1]-timepeaklist[num])
@@ -78,4 +78,6 @@ while a < len(timepeakdifflist):
     
 print(timepeakdifflist) #Debug
 newmeanperiod = sum(timepeakdifflist)/len(timepeakdifflist)
-print('Final period (numerical average): ', newmeanperiod, ' ms')
+print('Final period (numerical average): ', newmeanperiod*2, ' ms') # Note: The *2 is because the above code only finds the
+# differences in time between the peak acceleration values for the pendulum. The pendulum will hit this peak acceleration
+# /2 times/ per period so the period must be calculated by multiplying the difference in peak accel's by 2.

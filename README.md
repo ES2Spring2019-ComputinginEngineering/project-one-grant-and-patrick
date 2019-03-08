@@ -30,3 +30,11 @@ Variables that should be updated depedning on the test are:
 'Length' this is the length of the pendulum used and is only used in nameing the graph
 'testnumber' this is the number of the test used in naming the graph
 'realorsim' this is if the test is real world data or simulation data and is used in naming the graphs
+
+
+# Length_and_period_analyzer.py
+
+This program will graph the relationship between length of pendulum and period of pendulum for both real and simulated data. 
+'lengthlist' is the list of lengths of the pendulum, in meters.
+'real_periodlist' is the list of periods from real-world data that corrosponds to the correct length.
+'simulated_periodlist' is the list of the periods from simulated data that corrosponds to the correct length. 
