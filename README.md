@@ -11,9 +11,9 @@ This will return a file named 'csvfile.txt' into your microbit and then drag and
 ### simulation_code.py
 
 For simulation code run 'simulation_code.py' 
-This will produce three graphs one with velocity vs. time another with position vs. time and a final of acceleration vs. time
+This will produce three graphs one with velocity vs. time another with position vs. time and a final of acceleration vs. time.
 It will print the results at given the given time step and display time, velocity, acceleration, and position.
-A .csv file will be output to the current directory with time in milliseconds and acceleration in milli-gs
+A .csv file will be output to the current directory with time in milliseconds and acceleration in milli-gs.
 Variables that should be updated depedning on the test are:
 'test_number' this will put the number of the test in the name of the csv file
 'length' this is the length of the pendulum arm
