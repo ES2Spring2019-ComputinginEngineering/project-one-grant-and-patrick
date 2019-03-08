@@ -14,7 +14,7 @@ For simulation code run 'simulation_code.py'
 This will produce three graphs one with velocity vs. time another with position vs. time and a final of acceleration vs. time.
 It will print the results at given the given time step and display time, velocity, acceleration, and position.
 A .csv file will be output to the current directory with time in milliseconds and acceleration in milli-gs.
-Variables that should be updated depedning on the test are--
+<br />Variables that should be updated depedning on the test are--
 <br />'test_number' this will put the number of the test in the name of the csv file.
 <br />'length' this is the length of the pendulum arm.
 <br />'timeinitial' this is if you want the simulation to start at another time than 0.
@@ -26,7 +26,7 @@ Variables that should be updated depedning on the test are--
 ### data_analysis.py
 
 'data_analysis.py' will calculate the period after parsing the data and filtering it.
-Variables that should be updated depedning on the test are--
+<br />Variables that should be updated depedning on the test are--
 <br />'file' this is the path of the file that should be run in the analysis program.
 <br />'Length' this is the length of the pendulum used and is only used in nameing the graph.
 <br />'testnumber' this is the number of the test used in naming the graph.
