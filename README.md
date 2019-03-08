@@ -1,14 +1,14 @@
-# Project 1
-# Grant Smith & Patrick Wright
-# Pendulum Simulation
+# Project 1, Pendulum Simulation
+## Grant Smith & Patrick Wright
 
-# data_logging_script_microbit.py
+
+### data_logging_script_microbit.py
 
 The data collection code is found by running the file 'data_logging_script_microbit.py'
 Press the A button to start data collection then press the A button once more to end the data collection.
 This will return a file named 'csvfile.txt' into your microbit and then drag and drop from microbit into your computer.
 
-## simulation_code.py
+### simulation_code.py
 
 For simulation code run 'simulation_code.py' 
 This will produce three graphs one with velocity vs. time another with position vs. time and a final of acceleration vs. time
@@ -23,7 +23,7 @@ Variables that should be updated depedning on the test are:
 
 
 
-## data_analysis.py
+### data_analysis.py
 
 'data_analysis.py' will calculate the period after parsing the data and filtering it.
 Variables that should be updated depedning on the test are:
